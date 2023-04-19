@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Akira Expanded';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Akira Expanded'), url('https://fonts.cdnfonts.com/s/37506/Akira Expanded Demo.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: "Poppins";
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #676868;
+    border-radius: 6px;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    z-index: 999;
+    transition: 1s;
+    background-color: rgb(49, 49, 49);
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.akira {
+    font-family: 'Akira Expanded', sans-serif!important;
+}
+
+.clear {
+    clear: both;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.perkenalan p {
+    text-indent: 20px;
+}
+
+.mb-5 {
+    margin-bottom: 30px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-150 {
+    margin-top: 150px;
+}
+
+/* POPUP */
+.pop-up {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(49, 49, 49);
+    position: fixed;
+    bottom: -15vh;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 22px;
+    display: flex;
+    transition: 1s;
+    color: white;
+}
+
+.pop-up i{
+    position: absolute;
+    margin: auto 0;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.pop-up p {
+    margin-left: 60px;
+}
+
+.pop-up img {
+    position: absolute;
+    right: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+/* END POPUP */
+
+/* ------ NAVBAR ------- */
+.container-nav {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    transition: 0.5s;
+    height: 100px;
+    width: 100%;
+}
+
+.navbar-custom {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 35px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #eea16d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 2;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    transition: 1s;
+}
+
+.lite-text {
+    color: #333;
+    font-size: 200px;
+    letter-spacing: 100px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    z-index: -1;
+}
+
+nav .close-icon {
+    width: 35px;
+    position: absolute;
+    right: 80px;
+    top: 50px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    display: inline-block;
+    margin: 20px 20px 30px 50px;
+}
+
+.logo h3 {
+    position: absolute;
+    top: 17px;
+    left: 120px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container-nav.active .logo h3{
+    opacity: 1;
+}
+
+.stroke-menu {
+    font-size: 60px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 0.5px #fff;
+}
+
+/* Change navbar styling on scroll */
+.container-nav.active {
+	background: #fff;
+	box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-nav.active {
+	color: #555;
+}
+
+/* ---------- END NAVBAR --------------- */
+
+.jumbotron {
+    background: 
+				linear-gradient(
+				  rgba(0, 0, 0, 0.5),
+				  rgba(0, 0, 0, 0.5)
+				),
+			    url('image/jumbotron_revisi.png') no-repeat;
+    background-position-y: 50%;
+    background-size: cover;
+    height: 50%;
+    margin-top: -22px;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+.jumbotron .innerText {
+    margin-top: 10%;
+    color: white;
+}
+
+.jumbotron .innerText h1 {
+    font-size: 80px;
+}
+
+.jumbotron .innerText button {
+    padding: 14px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+.jumbotron .innerText button:hover {
+    background-color: white;
+    color: black;
+}
+
+.judul {
+    overflow: hidden;
+    white-space: nowrap;
+    display: relative;
+    margin-bottom: 50px;
+}
+
+.judul span {
+    font-size: 70px;
+    font-weight: bold;
+    color: transparent;
+    display: inline-block;
+    animation: marquee 5s linear infinite;
+    -webkit-text-stroke: 0.05em #000;
+    font-family: 'Akira Expanded';
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.perkenalan .circle {
+    position: absolute;
+    top: 1150px;
+    left: 450px;
+    z-index: -2;
+    animation: rotasicircle 15s linear infinite;
+    
+}
+
+@keyframes rotasicircle {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.perkenalan .rectangle {
+    position: absolute;
+    top: 2050px;
+    right: 25%;
+    z-index: -9;
+}
+
+.perkenalan .umiKiyowo {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 40px;
+    transition: 0.6s;
+    flex-grow: 1;
+}
+
+.perkenalan .umiKiyowo:hover {
+    filter: brightness(50%);
+}
+
+.perkenalan .containerImg {
+    flex-grow: 1;
+}
+
+.perkenalan .containerText2 a, 
+.perkenalan .containerText a {
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 30px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+.perkenalan .containerText a:hover,  .perkenalan .containerText2 a:hover{
+    background-color: #333;
+    color: white;
+}
+
+.perkenalan .containerText2 a {
+    float: right;
+}
+
+.perkenalan .containerText {
+    margin-left: 40px;
+    flex-grow: 1;
+}
+
+.perkenalan .containerText2 {
+    margin-right: 40px;
+    flex-grow: 1;
+}
+
+.perkenalan .containerText2 h1, .perkenalan .containerText2 h2{
+    float: right;
+    clear: right;
+}
+
+.perkenalan .containerText2 p {
+    clear: right;
+}
+
+.perkenalan .containerText  h1, .perkenalan .containerText2  h1{
+    font-size: 30px;
+}
+
+.perkenalan .informasiTambahan, .perkenalan .informasiTambahan2 {
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+    margin: 0 0 0 40px;
+    padding: 15px;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    border-radius: 10px;
+}
+
+.informasiTambahan table, .informasiTambahan2 table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.perkenalan .informasiTambahan2 {
+    margin: 0 40px 0 0!important;
+}
+
+.judulMograph h1{
+    font-size: 60px;
+}
+
+.judulMograph h1:nth-child(2) {
+    margin-top: -105px;
+}
+
+.stroke {
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 0.05em #000;
+}
+
+.mographSection .video {
+    text-align: center;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.mographSection .video video {
+    width: 600px;
+    height: 600px;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.characterSection .contentCharacter #textCharacterUmi {
+    position: absolute;
+    width: 640px;
+    transition: 1s;
+    left: -100%;
+}
+
+.characterSection .contentCharacter #textCharacterAzka {
+    position: absolute;
+    width: 640px;
+    transition: 1s;
+    right: -100%;
+}
+
+.characterSection .contentCharacter img {
+    width: 700px;
+    height: 700px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.characterSection .contentCharacter .characterAzka #textCharacterAzka,
+.characterSection .contentCharacter .characterUmi #textCharacterUmi {
+    color: white;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.characterSection .contentCharacter .back {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.characterSection .contentCharacter .confirm {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(63, 63, 63);
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.characterSection .contentCharacter img {
+    transform: scale(1.1);
+}
+
+.socialSection iframe {
+    margin: 20px 20px 0 12px!important;
+}
+
+article p {
+    text-align: justify;
+}
+
+footer {
+    padding-top: 70px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    nav ul li a {
+        font-size: 30px!important;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .jumbotron {
+        padding-left: 20px;
+        padding-right: 5px;
+        line-height: 1.2em;
+        margin-bottom: 50px;
+    }
+
+    .jumbotron h1 {
+        font-size: 30px!important;
+    }
+
+    .jumbotron h3 {
+        font-size: 15px;
+    }
+
+    .perkenalan .containerImg {
+        order: 3;
+    }
+
+    .perkenalan .umiKiyowo {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        padding: 10px!important;
+    }
+
+    .perkenalan .containerText, .perkenalan .containerText2 {
+        margin: 0;
+        width: 100%;
+        order: 2;
+    }
+
+    .rectangle {
+        display: none;
+    }
+
+    .judulMograph h1 {
+        font-size: 50px;
+    }
+
+    .judulMograph h1:nth-child(2) {
+        margin-top: -145px;
+    }
+
+    .perkenalan .containerText2 button {
+        float: none;
+    } 
+
+    .mographSection .video video {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .pop-up p {
+        font-size: 15px;
+    }
+    
+    .pop-up img {
+        width: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .perkenalan .informasiTambahan, 
+    .perkenalan .informasiTambahan2 {
+        margin: 30px 0 0 0!important;
+        order: 1;
+    }
+
+    
+    .perkenalan .containerText2 a {
+        float: none;
+    }
+
+    .perkenalan .containerText2 h1,
+    .perkenalan .containerText2 h2 {
+        float: none;
+    }
+
+    .characterSection {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .jumbotron h1{
+        font-size: 40px;
+    }
+    .contentMograph .row {
+        flex-direction: column;
+    }
+
+    .perkenalan .umiKiyowo {
+        width: 200px;
+    }
+
+    .perkenalan .informasiTambahan, .perkenalan .informasiTambahan2 {
+        width: 200%;
+    }
+
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .perkenalan .informasiTambahan, .perkenalan .informasiTambahan2 {
+        width: 200%;
+    }
+}
